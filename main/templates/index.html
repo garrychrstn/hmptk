@@ -2,15 +2,12 @@
 {% load static %}
 
 {% block style %}
-<link rel=stylesheet type=text/css href={% static 'css/nav.css' %}>
+<link rel=stylesheet type=text/css href={% static 'css/index.css' %}>
 {% endblock %}
 {% block content %}
-    <div>
-        <h1>This form</h1>
-        <form method='POST', action=''>
-            {% csrf_token %}
-            {{ msgform }}
-            <button type='submit' name='submit'>Submit</button>
-        </form>
+    <div class='container'>
+        <div class='img-container'>
+            <img id='sc' src={% static 'img/austin.png' %}>
+        </div>
     </div>
 {% endblock %}

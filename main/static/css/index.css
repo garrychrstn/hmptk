@@ -4,10 +4,6 @@
     margin: 0;
     padding: 0;
 }
-.container {
-    width: 80%;
-    margin: auto;
-}
 header {
     border-bottom: 1px solid #a5a5a5;
 }
@@ -33,4 +29,17 @@ header .nav {
     text-shadow:
     1px 1px 0 #a5a5a5,
     -1px -1px 0 #a5a5a5
+}
+
+.container {
+    width:  80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.img-container {
+    position: relative;
+}
+#sc {
+    max-width: 100%;
+    display: block;
 }
