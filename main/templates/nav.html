@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+    <head>
+        <title>HMPTK: Welcome</title>
+        {% block style %}
+            <link rel=stylesheet type=text/css href={% static 'css/nav.css' %}>
+        {% endblock %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class='nav'>
+                <div id='logo'>
+                    <img src={% static 'img/logotk.png'%} height='65'>
+                </div>
+                <div id='menu'>
+                    <ul>
+                        <li>about_us</li>
+                        <li>gallery</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
