@@ -10,6 +10,7 @@ from .forms import *
 from .models import *
 
 def index(response):
+    event = Event.objects.all()
     if response.method == 'POST':
         msgform = MessageInput(response.POST)
 
@@ -24,5 +25,6 @@ def index(response):
         msgform = MessageInput()
     context = {
         'msgform' : msgform,
+        'event' : event
     }
     return render(response, 'index.html', context)

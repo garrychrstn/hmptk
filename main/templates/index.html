@@ -10,4 +10,22 @@
             <img id='sc' src={% static 'img/austin.png' %}>
         </div>
     </div>
+    <div class='container'>
+        <div id='event'>
+            <h2>our event</h2>
+            {% for ev in event %}
+            <div class='evs'>
+                <div class='ev-img'>
+                    <img src='{{ ev.img }}' height=200>
+                </div>
+                <div class='ev-des'>
+                    <h3>{{ ev.title }} {{ev.line}}</h3>
+                    <p>Date : {{ ev.date }}</p>
+                    <p>Registration : {{ ev.link }}</p>
+                    <p>Description : {{ ev.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
