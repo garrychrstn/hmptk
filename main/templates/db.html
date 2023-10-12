@@ -16,7 +16,34 @@
             <div class='form-field'>
                 <form method='POST' action=''>
                     {% csrf_token %}
-                        {{ eventF }}
+                    <div class='inf'>
+                        <label for="{{ eventF.cat.id_for_label }}">Category</label>
+                        {{ eventF.cat }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.title.id_for_label }}">Title</label>
+                        {{ eventF.title }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.date.id_for_label }}">Date</label>
+                        {{ eventF.date }}
+                    </div>
+                    <div class='inf' id='desc'>
+                        <label for="{{ eventF.desc.id_for_label }}">Description</label>
+                        {{ eventF.desc }}
+                    </div>
+                    <div class='inf'>                    
+                        <label for="{{ eventF.line.id_for_label }}">Online/Offline</label>
+                        {{ eventF.line }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.img.id_for_label }}">Image Link</label>
+                        {{ eventF.img }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.link.id_for_label }}">Registration Link</label>
+                        {{ eventF.link }}
+                    </div>
                     <button type='submit' name='upload'>SUBMIT</button>
                 </form>
             </div>

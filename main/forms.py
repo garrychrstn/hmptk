@@ -27,7 +27,7 @@ class addEvent(forms.Form):
         label='Category'
     )
     title = forms.CharField(
-        max_length=60,
+        max_length=100,
         label='Title',
         required=True
     )
@@ -35,7 +35,7 @@ class addEvent(forms.Form):
         widget=forms.widgets.DateInput(attrs={'type': 'date'})
     )
     desc = forms.CharField(
-        max_length=60,
+        max_length=100,
         label='Description',
         required='True'
     )
@@ -48,10 +48,10 @@ class addEvent(forms.Form):
     img = forms.CharField(
         required=True,
         label='Image Link',
-        max_length=40
+        max_length=100
     )
     link = forms.CharField(
         required=True,
         label='Registration Link',
-        max_length=50
+        max_length=100
     )

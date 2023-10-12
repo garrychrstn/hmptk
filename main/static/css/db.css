@@ -40,10 +40,78 @@ header .nav {
 }
 
 .container {
+    padding-top: 50px;
     width: 80%;
     margin: auto;
 }
-
+.container h2 {
+    color: #a5a5a5;
+    border-bottom: 3px solid #ff1f1f;
+    margin-bottom: 50px;
+}
 #form {
     color: #a5a5a5;
+    border-radius: 20px;
+    border: 1px solid #a5a5a5;
+    padding: 50px 100px;
+    background: #1e1e1e;
 }
+#form h3 {
+    text-align: center;
+}
+#form .option {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.option h4 {
+    border: 1px solid #a5a5a5;
+    padding: 10px;
+    border-radius: 10px;
+}
+.inf {
+    display: block;
+    margin-bottom: 20px;
+}
+.inf label {
+    display: inline-block;
+    width: 30%;
+    }
+.inf input {
+    width: 60%;
+    height: 30px;
+    background: #1e1e1e;
+    border: 1px solid #a5a5a5;
+    color: #a5a5a5;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+#desc input {
+    height: 50px;
+}
+.inf select {
+    background : #1e1e1e;
+    color: #a5a5a5;
+    padding: 10px;
+    border-radius: 10px;
+}
+button {
+    display: block;
+    margin: auto;
+    background: #1e1e1e;
+    color: #a5a5a5;
+    padding: 10px;
+    box-shadow: none;
+    cursor: pointer;
+}
+/* .form-field label {
+    display: inline-block;
+    vertical-align: top;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+    display: inline-block;
+    vertical-align: top;
+} */

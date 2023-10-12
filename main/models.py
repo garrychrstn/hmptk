@@ -14,7 +14,7 @@ class Event(models.Model):
     title = models.CharField(max_length=50)
     date = models.DateField()
     link = models.CharField(max_length=200)
-    desc = models.CharField(max_length=200)
+    desc = models.CharField(max_length=1000)
     upt = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
