@@ -33,10 +33,7 @@ header .nav {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     margin-left: 50px;
-    color: #171717;
-    text-shadow:
-    1px 1px 0 #a5a5a5,
-    -1px -1px 0 #a5a5a5
+    color:  #a5a5a5;
 }
 
 .container {
