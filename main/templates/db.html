@@ -1,0 +1,24 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel=stylesheet type='text/css' href={% static 'css/db.css' %}>
+{% endblock %}
+{% block content %}
+    <div class='container'>
+        <h2>Welcome, what do you wanna do today?</h2>
+        <div id='form'>
+            <h3>forPublic</h3>
+            <div class='option'>
+                <h4>Add Event</h4>
+                <h4>Add News</h4>
+            </div>
+            <div class='form-field'>
+                <form method='POST' action=''>
+                    {% csrf_token %}
+                        {{ eventF }}
+                    <button type='submit' name='upload'>SUBMIT</button>
+                </form>
+            </div>
+    </div>
+{% endblock %}

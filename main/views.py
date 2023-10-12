@@ -28,3 +28,28 @@ def index(response):
         'event' : event
     }
     return render(response, 'index.html', context)
+
+def db (response):
+    if response.method == 'POST':
+        eventF = addEvent(response.POST)
+        if eventF.is_valid():
+            img=eventF.cleaned_data['img']
+            cat=eventF.cleaned_data['cat']
+            line=eventF.cleaned_data['line']
+            title=eventF.cleaned_data['title']
+            date=eventF.cleaned_data['date']
+            link=eventF.cleaned_data['link']
+            desc=eventF.cleaned_data['desc']
+
+            e = Event(img=img, cat=cat, line=line, title=title, date=date, link=link, desc=desc)
+            e.save()
+            
+            eventF = addEvent()
+    else:
+        eventF = addEvent()
+        
+    context = {
+        'eventF' : eventF
+    }
+
+    return render(response, 'db.html', context)

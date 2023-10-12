@@ -18,5 +18,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('db', views.db, name='db'),
     path('', views.index, name='index'),
 ]
