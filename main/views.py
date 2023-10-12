@@ -10,7 +10,7 @@ from .forms import *
 from .models import *
 
 def index(response):
-    event = Event.objects.all()
+    lev = Event.objects.all().order_by('-upt')[:3]
     if response.method == 'POST':
         msgform = MessageInput(response.POST)
 
@@ -25,7 +25,7 @@ def index(response):
         msgform = MessageInput()
     context = {
         'msgform' : msgform,
-        'event' : event
+        'lev' : lev
     }
     return render(response, 'index.html', context)
 
