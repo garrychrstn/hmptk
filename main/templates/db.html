@@ -3,6 +3,7 @@
 
 {% block style %}
     <link rel=stylesheet type='text/css' href={% static 'css/db.css' %}>
+    <script src="{% static 'js/db.js' %}" async></script>
 {% endblock %}
 {% block content %}
     <div class='container'>
@@ -10,11 +11,12 @@
         <div id='form'>
             <h3>forPublic</h3>
             <div class='option'>
-                <h4>Add Event</h4>
-                <h4>Add News</h4>
+                <button onClick="addEve()">Add Event</button>
+                <button onClick="addNews()">Add News</button>
             </div>
             <div class='form-field'>
-                <form method='POST' action=''>
+                <form id='eve' method='POST' action=''>
+                    <h3>Event Form</h3>
                     {% csrf_token %}
                     <div class='inf'>
                         <label for="{{ eventF.cat.id_for_label }}">Category</label>
@@ -44,7 +46,40 @@
                         <label for="{{ eventF.link.id_for_label }}">Registration Link</label>
                         {{ eventF.link }}
                     </div>
-                    <button type='submit' name='upload'>SUBMIT</button>
+                    <button id='submit' type='submit' name='upload'>SUBMIT</button>
+                </form>
+                <form id='news' method='POST' action=''>
+                    <h3>News Form</h3>
+                    {% csrf_token %}
+                    <div class='inf'>
+                        <label for="{{ eventF.cat.id_for_label }}">Category</label>
+                        {{ eventF.cat }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.title.id_for_label }}">Title</label>
+                        {{ eventF.title }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.date.id_for_label }}">Date</label>
+                        {{ eventF.date }}
+                    </div>
+                    <div class='inf' id='desc'>
+                        <label for="{{ eventF.desc.id_for_label }}">Description</label>
+                        {{ eventF.desc }}
+                    </div>
+                    <div class='inf'>                    
+                        <label for="{{ eventF.line.id_for_label }}">Online/Offline</label>
+                        {{ eventF.line }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.img.id_for_label }}">Image Link</label>
+                        {{ eventF.img }}
+                    </div>
+                    <div class='inf'>
+                        <label for="{{ eventF.link.id_for_label }}">Registration Link</label>
+                        {{ eventF.link }}
+                    </div>
+                    <button id='submit' type='submit' name='upload'>SUBMIT</button>
                 </form>
             </div>
     </div>

@@ -19,3 +19,12 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title} {self.date}"
+
+class News(models.Model):
+    img = models.CharField(max_length=200)
+    title = models.CharField(max_length=30)
+    topic = models.CharField(max_length=20)
+    desc = models.CharField(max_length=1000)
+    art = models.TextField(max_length=2000)
+    def __str__(self):
+        return f"{self.title}, {self.topic}"

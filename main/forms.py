@@ -55,3 +55,11 @@ class addEvent(forms.Form):
         label='Registration Link',
         max_length=100
     )
+
+class addNews(forms.Form):
+    img = forms.CharField(max_length=200, label='Image Link')
+    title = forms.CharField(max_length=200, label='Title')
+    topic = forms.CharField(max_length=200, label='Topic')
+    desc = forms.CharField(max_length=200, label='Description')
+    art = forms.CharField(max_length=200, label='Article')
+    
