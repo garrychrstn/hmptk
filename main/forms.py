@@ -1,9 +1,11 @@
 from django import forms
+from . models import *
 from dal import autocomplete
 from django.shortcuts import  render, redirect
 from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm #add this
+from ckeditor.widgets import CKEditorWidget
 
 class MessageInput(forms.Form):
     msg = forms.CharField(
