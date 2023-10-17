@@ -14,7 +14,7 @@ class Event(models.Model):
     title = models.CharField(max_length=50)
     date = models.DateField()
     link = models.CharField(max_length=200)
-    desc = models.CharField(max_length=1000)
+    desc = models.TextField(max_length=1000)
     upt = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -26,5 +26,6 @@ class News(models.Model):
     topic = models.CharField(max_length=20)
     desc = models.CharField(max_length=1000)
     art = models.TextField(max_length=2000)
+    upt = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):
         return f"{self.title}, {self.topic}"

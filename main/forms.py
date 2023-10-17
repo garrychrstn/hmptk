@@ -35,7 +35,7 @@ class addEvent(forms.Form):
         widget=forms.widgets.DateInput(attrs={'type': 'date'})
     )
     desc = forms.CharField(
-        max_length=100,
+        max_length=1000,
         label='Description',
         required='True'
     )
@@ -57,9 +57,9 @@ class addEvent(forms.Form):
     )
 
 class addNews(forms.Form):
-    img = forms.CharField(max_length=200, label='Image Link')
-    title = forms.CharField(max_length=200, label='Title')
-    topic = forms.CharField(max_length=200, label='Topic')
-    desc = forms.CharField(max_length=200, label='Description')
-    art = forms.CharField(max_length=200, label='Article')
+    img = forms.CharField(max_length=200, label='Image Link', required=True)
+    title = forms.CharField(max_length=200, label='Title', required=True)
+    topic = forms.CharField(max_length=200, label='Topic', required=True)
+    desc = forms.CharField(max_length=1000, label='Description', required=True)
+    art = forms.CharField(max_length=1000, label='Article', required=True)
     

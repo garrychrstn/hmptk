@@ -52,32 +52,24 @@
                     <h3>News Form</h3>
                     {% csrf_token %}
                     <div class='inf'>
-                        <label for="{{ eventF.cat.id_for_label }}">Category</label>
-                        {{ eventF.cat }}
+                        <label for="{{ newsF.img.id_for_label }}">Category</label>
+                        {{ newsF.img }}
                     </div>
                     <div class='inf'>
-                        <label for="{{ eventF.title.id_for_label }}">Title</label>
-                        {{ eventF.title }}
+                        <label for="{{ newsF.title.id_for_label }}">Title</label>
+                        {{ newsF.title }}
                     </div>
                     <div class='inf'>
-                        <label for="{{ eventF.date.id_for_label }}">Date</label>
-                        {{ eventF.date }}
+                        <label for="{{ newsF.topic.id_for_label }}">Date</label>
+                        {{ newsF.topic }}
                     </div>
                     <div class='inf' id='desc'>
-                        <label for="{{ eventF.desc.id_for_label }}">Description</label>
-                        {{ eventF.desc }}
+                        <label for="{{ newsF.desc.id_for_label }}">Description</label>
+                        {{ newsF.desc }}
                     </div>
-                    <div class='inf'>                    
-                        <label for="{{ eventF.line.id_for_label }}">Online/Offline</label>
-                        {{ eventF.line }}
-                    </div>
-                    <div class='inf'>
-                        <label for="{{ eventF.img.id_for_label }}">Image Link</label>
-                        {{ eventF.img }}
-                    </div>
-                    <div class='inf'>
-                        <label for="{{ eventF.link.id_for_label }}">Registration Link</label>
-                        {{ eventF.link }}
+                    <div class='inf' id='art'>                    
+                        <label for="{{ newsF.art.id_for_label }}">Online/Offline</label>
+                        {{ newsF.art }}
                     </div>
                     <button id='submit' type='submit' name='upload'>SUBMIT</button>
                 </form>
