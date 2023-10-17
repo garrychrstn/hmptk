@@ -10,19 +10,34 @@
             <img id='sc' src={% static 'img/austin.png' %}>
         </div>
     </div>
-    <div class='container'>
+    <div class='container' id='index-cont'>
         <div id='event'>
-            <h2>our event</h2>
+            <h2 class='in-head'>our event</h2>
             {% for ev in lev %}
-            <div class='evs'>
-                <div class='ev-img'>
+            <div class='in-cont'>
+                <div class='in-img'>
                     <img src='{{ ev.img }}' height=200>
                 </div>
-                <div class='ev-des'>
+                <div class='in-des'>
                     <h3>{{ ev.title }} ({{ev.line}})</h3>
                     <p>Date : {{ ev.date }}</p>
                     <p>Registration : {{ ev.link }}</p>
                     <p>Description : {{ ev.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div id='news'>
+            <h2 class='in-head'>our news</h2>
+            {% for ne in news %}
+            <div class='in-cont'>
+                <div class='in-img'>
+                    <img src='{{ ne.img }}' height=200>
+                </div>
+                <div class='in-des'>
+                    <h3>{{ ne.title }} ({{ ne.topic }})</h3>
+                    <p>{{ ne.desc }}</p>
+                    <p>{{ ne.art }}</p>
                 </div>
             </div>
             {% endfor %}

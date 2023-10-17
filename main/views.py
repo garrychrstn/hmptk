@@ -11,6 +11,7 @@ from .models import *
 
 def index(response):
     lev = Event.objects.all().order_by('-upt')[:3]
+    news = News.objects.all().order_by('-upt')[:3]
     if response.method == 'POST':
         msgform = MessageInput(response.POST)
 
@@ -25,7 +26,8 @@ def index(response):
         msgform = MessageInput()
     context = {
         'msgform' : msgform,
-        'lev' : lev
+        'lev' : lev,
+        'news' : news,
     }
     return render(response, 'index.html', context)
 
@@ -47,13 +49,13 @@ def db (response):
                 e.save()
                 
                 eventF = addEvent()
-                
+
             if newsF.is_valid():
-                img=eventF.cleaned_data['img']
-                title=eventF.cleaned_data['title']
-                topic=eventF.cleaned_data['topic']
-                desc=eventF.cleaned_data['desc']
-                art=eventF.cleaned_data['art']
+                img=newsF.cleaned_data['img']
+                title=newsF.cleaned_data['title']
+                topic=newsF.cleaned_data['topic']
+                desc=newsF.cleaned_data['desc']
+                art=newsF.cleaned_data['art']
                 
                 n = News(img=img, title=title, topic=topic, desc=desc, art=art)
                 n.save()
