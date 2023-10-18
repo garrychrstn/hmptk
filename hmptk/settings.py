@@ -130,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_ALLOWED_CONTENT_TYPES = ['image']
+
+LOGIN_URL ='main:login'
+
+LOGIN_REDIRECT_URL = '/index/'
+
+LOGOUT_REDIRECT_URL = 'main:login'

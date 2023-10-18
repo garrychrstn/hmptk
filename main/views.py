@@ -9,11 +9,11 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from .forms import *
 from .models import *
 
-def index(response):
+def index(request):
     lev = Event.objects.all().order_by('-upt')[:3]
     news = News.objects.all().order_by('-upt')[:3]
-    if response.method == 'POST':
-        msgform = MessageInput(response.POST)
+    if request.method == 'POST':
+        msgform = MessageInput(request.POST)
 
         if msgform.is_valid():
             msg = msgform.cleaned_data['msg']
@@ -29,8 +29,9 @@ def index(response):
         'lev' : lev,
         'news' : news,
     }
-    return render(response, 'index.html', context)
+    return render(request, 'index.html', context)
 
+@login_required
 def db (response):
     if response.method == 'POST':
         eventF = addEvent(response.POST)
@@ -71,3 +72,23 @@ def db (response):
     }
 
     return render(response, 'db.html', context)
+
+def login_view(request):
+    if request.method == 'POST':
+        logF = AuthenticationForm(request, data=request.POST)
+        if logF.is_valid():
+            username = logF.cleaned_data['username']
+            password = logF.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged as {username}")
+                return redirect("main:db")
+            else:
+                messages.error(request, "Invalid username or password")
+        else:
+            messages.error(request, "Invalid username or password")
+    else:
+        logF = AuthenticationForm()
+    
+    return render(request, 'login.html', {'logF' : logF})

@@ -8,6 +8,14 @@ body, header {
     background: #171717;
 }
 
+body {
+    background-image: url('/static/img/man.png');
+    background-attachment: fixed;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
 .container {
     width: 80%;
     margin: auto;
